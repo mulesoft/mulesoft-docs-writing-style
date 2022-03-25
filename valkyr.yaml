@@ -1,0 +1,3 @@
+product: dev-docs
+component: writing-style
+strategy: docker
