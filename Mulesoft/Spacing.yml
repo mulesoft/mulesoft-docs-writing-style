@@ -1,0 +1,9 @@
+extends: existence
+message: "'%s' should have one space."
+link: https://docs.microsoft.com/en-us/style-guide/punctuation/periods
+level: error
+nonword: true
+tokens:
+  - '[\w]+ {2,}[\w]+'
+  - '[\w]+[.?!]+ {2,}[\w]+'
+  - '[a-z][.?!][A-Z]'

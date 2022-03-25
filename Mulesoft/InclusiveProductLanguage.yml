@@ -1,0 +1,19 @@
+extends: substitution
+message: "Consider using '%s' instead of '%s'."
+link: https://salesforce.quip.com/bUe4AltWVElW#YKFACA3U5fz
+ignorecase: true
+level: warning
+action:
+  name: replace
+swap:
+  blackbox model: opaque box or closed box
+  blackhat: unethical or malicious
+  blacklist: blocklist
+  blackout: blockout
+  brownout: reduced availability
+  first-class citizen: core feature, built-in, or top-level
+  master: primary, controller, or main
+  scrum master: scrum lead
+  slave: secondary or follower
+  whitehat: security researcher or ethical
+  whitelist: allowlist
