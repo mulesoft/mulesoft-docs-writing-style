@@ -18,6 +18,7 @@ jobs:
         type: 'zip'
         filename: 'mulesoft.zip'
         path: 'mulesoft'
+        append_to_pre_release_tag: ''
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
