@@ -1,6 +1,5 @@
 name: Bump version
 on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +22,7 @@ jobs:
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
-        artifacts: "mulesoft.zip"
+        artifacts: mulesoft.zip
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload Release to latest
       uses: ncipollo/release-action@v1
@@ -31,5 +30,5 @@ jobs:
         allowUpdates: true
         tag: latest
         name: latest
-        artifacts: "mulesoft.zip"
+        artifacts: mulesoft.zip
         token: ${{ secrets.GITHUB_TOKEN }}
