@@ -1,0 +1,14 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+extends: existence
+message: "Don't use language (such as '%s') that are not accessible."
+link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
+level: suggestion
+ignorecase: true
+tokens:
+  - above
+  - below
+  - left
+  - right
