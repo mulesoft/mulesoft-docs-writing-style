@@ -17,6 +17,7 @@ MinAlertLevel = suggestion
 
 [modules/ROOT/pages/*.adoc]
 BasedOnStyles = Mulesoft
+
 ```
 
 This is the file that tells Vale to use the Mulesoft Writing Style for all of your docs.
@@ -41,12 +42,12 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-        version: 2.17.0
         fail_on_error: true
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 ```
 
 This creates a https://github.com/errata-ai/vale-action[Vale Github Action] that will automatically lint your docs.
