@@ -24,11 +24,3 @@ jobs:
         name: ${{ steps.tag_version.outputs.new_tag }}
         artifacts: Mulesoft.zip
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload Release to latest
-      uses: ncipollo/release-action@v1
-      with:
-        allowUpdates: true
-        tag: ${{ steps.tag_version.outputs.new_tag }}
-        name: latest
-        artifacts: Mulesoft.zip
-        token: ${{ secrets.GITHUB_TOKEN }}
