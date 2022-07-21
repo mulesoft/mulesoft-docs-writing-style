@@ -5,7 +5,7 @@
 extends: existence
 message: "Don't use collocation words such as '%s'. See the Writing Style Reference for details."
 # See the Writing Style Reference
-link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
+link: https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-collocation
 ignorecase: true
 level: error
 tokens:

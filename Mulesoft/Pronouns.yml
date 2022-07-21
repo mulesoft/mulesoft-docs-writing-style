@@ -1,0 +1,16 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+extends: existence
+message: |
+  "Do not use gender-specific languages like '%s'. Replace with a gender-neutral noun indicating the person's role, such as user, customer, administrator, or developer.
+  When necessary, you can use the plural pronoun to refer to individuals: "they," "them," and "their." Use "its" for a group such as a business or organization."
+link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-pronouns
+level: error
+ignorecase: true
+tokens:
+  - (?:he|him|his)
+  - (?:she|her|hers)
+  - he/she
+  - s/he
