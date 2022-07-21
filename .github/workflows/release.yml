@@ -24,7 +24,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
     - name: Prerelease
-      if: ${{ github.event_name == 'push' }}
+      if: ${{ github.event_name == 'pull_request' }}
       uses: ncipollo/release-action@v1
       with:
         prerelease: true
@@ -33,7 +33,7 @@ jobs:
         artifacts: Mulesoft.zip
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Release
-      if: ${{ github.event_name == 'pull_request' }}
+      if: ${{ github.event_name != 'pull_request' }}
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
