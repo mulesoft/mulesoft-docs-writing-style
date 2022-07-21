@@ -3,18 +3,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 extends: existence
-message: "Do not use symbols like '%s'. See the Writing Style Reference for details."
+message: "Avoid using '%s' as they are either modal verbs or they add no values. See the Writing Style Reference for details."
 link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
 ignorecase: true
-nonword: true
-level: error
-action:
-  name: edit
-  params:
-    - remove
-    - ' '
+level: suggestion
 tokens:
-  - '\s-\s'
-  - '&'
-  - '%'
-  - '/'
+  - (?:able to|capable of|can|may|might)
+  - and so on
+  # - completes*
