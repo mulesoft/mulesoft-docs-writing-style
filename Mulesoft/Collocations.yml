@@ -1,0 +1,49 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+extends: existence
+message: "Don't use collocation words such as '%s'. See the Writing Style Reference for details."
+# See the Writing Style Reference
+link: https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-collocation
+ignorecase: true
+level: error
+tokens:
+  - (?:next|past) few (?:days|weeks|months|years)
+  - (?:early|late) (?:\d+)(?:d|st|th) century
+  - bang on time
+  - dead on time
+  - early 12th century
+  - free time
+  - from dawn till dusk
+  - great deal of time
+  - make time for
+  - right on time
+  - run out of time
+  - save time
+  - spare time
+  - spend some time
+  - take your time
+  - tell someone the time
+  - time goes by
+  - time passes
+  - waste time	
+  - annual turnover
+  - bear in mind
+  - break off negotiations
+  - cease trading
+  - chair a meeting
+  - close a deal
+  - close a meeting
+  - come to the point
+  - dismiss an offer
+  - draw a conclusion
+  - draw your attention to
+  - launch a new product
+  - lay off staff
+  - go bankrupt
+  - go into partnership
+  - make a (?:loss|profit)
+  - market forces
+  - sales figures
+  - take on staff
