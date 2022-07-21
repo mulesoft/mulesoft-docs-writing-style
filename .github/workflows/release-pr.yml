@@ -28,7 +28,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        tag: latest
         name: latest
         artifacts: Mulesoft.zip
         token: ${{ secrets.GITHUB_TOKEN }}
