@@ -23,7 +23,17 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
-    - name: Upload Release
+    - name: Prerelease
+      if: ${{ github.event_name == 'push' }}
+      uses: ncipollo/release-action@v1
+      with:
+        prerelease: true
+        tag: ${{ steps.tag_version.outputs.new_tag }}
+        name: ${{ steps.tag_version.outputs.new_tag }}
+        artifacts: Mulesoft.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Release
+      if: ${{ github.event_name == 'pull_request' }}
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
