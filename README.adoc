@@ -9,44 +9,9 @@ The primary purpose of this repository is to enforce the writing style of the ht
 
 NOTE: ❗ Mulesoft Writing Style requires Vale >= **1.7.0**. ❗
 
-In the root directory of your docs repo, create a file called *.vale.ini* with the following content:
+There are a few files in the link:onboarding-files[onboarding-files] directory that are used to configure the style guide. They need to be copied over to your docs repo. 
 
-```ini
-StylesPath = ../dev-docs-writing-style
-MinAlertLevel = suggestion
-
-[modules/ROOT/pages/*.adoc]
-BasedOnStyles = mulesoft
-```
-
-This is the file that tells Vale to use the Mulesoft Writing Style for all of your docs.
-
-Then, create a directory named *.github/workflows*. Within this directory, create a file called *vale.yml* with the following content:
-
-```yaml
-name: Linting
-on: [push]
-
-jobs:
-  prose:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
-
-    - name: Vale
-      uses: errata-ai/vale-action@v1.7.0
-      with:
-        styles: |
-          https://github.com/mulesoft/dev-docs-writing-style/releases/download/latest/mulesoft.zip
-        debug: true
-      env:
-        # Required, set by GitHub actions automatically:
-        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-```
-
-This creates a https://github.com/errata-ai/vale-action[Vale Github Action] that will automatically lint your docs.
+Simply run `cp -R onboarding-files/. <path>` where <path> is the path to your docs repo, for example `cp -R onboarding-files/. ../docs-anypoint-datagraph`.
 
 == Resources
 
