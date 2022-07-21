@@ -1,5 +1,8 @@
 name: Bump version
-on:
+on: 
+  pull_request:
+    branches:
+      - master
   push:
     branches:
       - master
@@ -24,6 +27,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
-        name: Release ${{ steps.tag_version.outputs.new_tag }}
-        artifacts: mulesoft.zip
+        name: ${{ steps.tag_version.outputs.new_tag }}
+        artifacts: Mulesoft.zip
         token: ${{ secrets.GITHUB_TOKEN }}
