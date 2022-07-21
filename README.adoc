@@ -9,7 +9,7 @@ The primary purpose of this repository is to enforce the writing style of the ht
 
 NOTE: ❗ Mulesoft Writing Style requires Vale >= **1.7.0**. ❗
 
-There are a few files in the link:onboarding-files[onboarding-files] directory that are used to configure the style guide. They need to be copied over to your docs repo. 
+There are a few files in the link:onboarding-files[onboarding-files] directory that are used to configure the style guide. They need to be copied over to your docs repo.
 
 Simply run `cp -R onboarding-files/. <path>` where <path> is the path to your docs repo, for example `cp -R onboarding-files/. ../docs-anypoint-datagraph`.
 
