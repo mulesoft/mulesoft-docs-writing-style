@@ -1,0 +1,42 @@
+name: Bump version
+on: 
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Zip Release
+      uses: thedoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'Mulesoft.zip'
+        path: 'Mulesoft'
+    - name: Bump version and push tag
+      id: tag_version
+      uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
+    # - name: Prerelease
+    #   if: ${{ github.event_name == 'pull_request' }}
+    #   uses: ncipollo/release-action@v1
+    #   with:
+    #     prerelease: true
+    #     tag: ${{ steps.tag_version.outputs.new_tag }}
+    #     name: ${{ steps.tag_version.outputs.new_tag }}
+    #     artifacts: Mulesoft.zip
+    #     token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Release
+      # if: ${{ github.event_name != 'pull_request' }}
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.tag_version.outputs.new_tag }}
+        name: ${{ steps.tag_version.outputs.new_tag }}
+        artifacts: Mulesoft.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
