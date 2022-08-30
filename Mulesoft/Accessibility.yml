@@ -4,7 +4,7 @@
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 extends: existence
 message: "Don't use language (such as '%s') that are not accessible."
-link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
+link: https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-%22above,%22%22below%22
 level: suggestion
 ignorecase: true
 tokens:
