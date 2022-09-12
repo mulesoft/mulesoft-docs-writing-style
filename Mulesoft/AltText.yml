@@ -1,0 +1,13 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+scope: raw
+extends: existence
+message: |
+  "'%s' either does not have an alt text, or alt text is distorted due to the presence of commas 
+  (if this is the case, please use image::name.jpg[alt="your alt text here"] to fix)."
+ignorecase: true
+level: error
+raw:
+  - 'image::[\w-_\.]+\[(?:[\s]*|(?!(alt=)).*,.*)\]'
