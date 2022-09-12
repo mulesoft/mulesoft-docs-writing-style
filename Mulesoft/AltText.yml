@@ -5,9 +5,9 @@
 scope: raw
 extends: existence
 message: |
-  "'%s' either does not have an alt text, or alt text is distorted due to the presence of commas 
-  (if this is the case, please use image::name.jpg[alt="your alt text here"] to fix)."
+  "'%s' either does not have an alt text, or alt text is broken due to the presence of commas 
+  (if this is the case, please add "" around your alt text to fix to fix)."
 ignorecase: true
 level: error
 raw:
-  - 'image::[\w-_\.]+\[(?:[\s]*|(?!(alt=)).*,.*)\]'
+  - 'image::[\w-_\.]+\[(?:[\s]*|[^"]*,[^"]*)\]'
