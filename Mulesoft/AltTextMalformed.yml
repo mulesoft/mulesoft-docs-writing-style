@@ -10,4 +10,4 @@ message: |
 ignorecase: true
 level: error
 raw:
-  - 'image::[\w-_\.]+(\[[^"]).*,[\s]*.+([^"]\])'
+  - 'image::[\w-_\.]+(jpg|jpeg|png|svg)(\[[^"]).*,[\s]*.+([^"]\])'
