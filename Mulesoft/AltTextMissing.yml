@@ -1,0 +1,11 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+scope: raw
+extends: existence
+message: "'%s' does not have an alt text, making it inaccessible for screen reader users. Please add an alt text."
+ignorecase: true
+level: error
+raw:
+  - 'image::[\w-_\.]+(jpg|jpeg|png|svg)(\[\s*\]|\["\s*"\]|\s)'

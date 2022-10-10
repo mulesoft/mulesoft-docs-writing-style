@@ -5,9 +5,9 @@
 scope: raw
 extends: existence
 message: |
-  "'%s' either does not have an alt text, or alt text is broken due to the presence of commas 
-  (if this is the case, please add "" around your alt text to fix)."
+  '%s' has a malformed alt text due to the presence of commas. Please add "" around your alt texts.
+  Example: image::pic.png["By adding the double quotation marks around this alt text, it preserves the format."]
 ignorecase: true
 level: error
 raw:
-  - 'image::[\w-_\.]+\[(?:[\s]*|[^"]*,[^"]*)\]'
+  - 'image::[\w-_\.]+(jpg|jpeg|png|svg)(\[[^"]).*,[\s]*.+([^"]\])'
