@@ -1,0 +1,21 @@
+# # Copyright (c) 2023, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
+#
+# Proposes substitutions for commonly misspelled words and abbreviations
+#
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: error
+nonword: false
+action:
+  name: replace
+swap:
+  'AnyPoint': Anypoint
+  'Mulesoft': MuleSoft
+  '\b(?:on premise|on-premise)': on-premises
+  'etc.': and so forth
+  '\b(?:eg|e\.g\.)[\s,]': for example
+  '\b(?:ie|i\.e\.)[\s,]': that is
+  'ergo': therefore

@@ -1,0 +1,16 @@
+# # Copyright (c) 2023, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
+#
+# Flags text that is missing the oxford comma
+#
+extends: existence
+link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
+message: |
+  "Add a comma to the second-to-last word in the sequence"
+link:
+level: error
+ignorecase: true
+tokens:
+  - (?:[^,]+,){1,}\s\w+\sand
