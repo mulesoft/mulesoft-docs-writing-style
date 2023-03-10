@@ -6,7 +6,7 @@
 # Flags the following admonitions: Note, Caution, Warning, Tip, Importnat, and Note that. This check ignores case.
 #
 extends: existence
-message: "'%s' Try not to use admonitions"
+message: "Try not to use admonitions like '%s'"
 link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-admonitions
 ignorecase: true
 level: suggestion
