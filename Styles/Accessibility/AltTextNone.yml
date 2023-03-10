@@ -5,9 +5,9 @@
 #
 # Flags missing alt text
 #
-link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Accessibility
 extends: existence
 message: "'%s' requires alt text"
+link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Accessibility
 ignorecase: true
 level: error
 raw:

@@ -6,8 +6,8 @@
 # Flags the following admonitions: Note, Caution, Warning, Tip, Importnat, and Note that. This check ignores case.
 #
 extends: existence
-link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-admonitions
 message: "'%s' Try not to use admonitions"
+link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference#MuleSoftCXWritingStyleReference-admonitions
 ignorecase: true
 level: suggestion
 tokens:

@@ -11,15 +11,15 @@ link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Access
 level: warning
 ignorecase: true
 tokens:
-round
-square
-right
-left
-above
-below
-bottom
-top
-upper
-lower
-beside
-corner
+  - round
+  - square
+  - right
+  - left
+  - above
+  - below
+  - bottom
+  - top
+  - upper
+  - lower
+  - beside
+  - corner

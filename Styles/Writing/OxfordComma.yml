@@ -6,10 +6,9 @@
 # Flags text that is missing the oxford comma
 #
 extends: existence
-link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
 message: |
   "Add a comma to the second-to-last word in the sequence"
-link:
+link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference
 level: error
 ignorecase: true
 tokens:

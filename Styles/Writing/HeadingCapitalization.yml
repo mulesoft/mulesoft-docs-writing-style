@@ -6,7 +6,6 @@
 # Flags headings that are not initial capped
 #
 extends: capitalization
-link: 
 message: "Use title-style capitalization in headings"
 nonword: true
 level: warning

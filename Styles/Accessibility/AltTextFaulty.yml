@@ -6,9 +6,9 @@
 # Flags alt text containing spaces or commas if it is not enclosed in quotes
 #
 extends: existence
-link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Accessibility
 message: |
-  "'%s' Add quotes around alt text that has commas or spaces"
+ "'%s' Add quotes around alt text that has commas or spaces"
+link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Accessibility
 ignorecase: true
 level: error
 raw:
