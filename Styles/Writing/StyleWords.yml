@@ -18,15 +18,15 @@ swap:
   '\b(?:different to|different than)': different from
   'drag and drop': drag
   'grayed out': unavailable
-  `grey`: gray
-  `in the command line`: on the command line
-  `information on`: information about
-  `log into`: log in to
+  'grey': gray
+  'in the command line': on the command line
+  'information on': information about
+  'log into': log in to
   '\b(?:on premise|on-premise)': on-premises
-  `sign into:` sign in to
-  `synchronize': sync
-  `whether or not`: whether
-  `wish`: want
+  'sign into:'' sign in to
+  'synchronize': sync
+  'whether or not': whether
+  'wish': want
   'etc.': and so on
   '\b(?:eg|e\.g\.)[\s,]': for example
   '\b(?:ie|i\.e\.)[\s,]': that is

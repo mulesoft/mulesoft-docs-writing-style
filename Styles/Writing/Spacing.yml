@@ -6,7 +6,7 @@
 # Flags occurrences in which there is more than one space between sentences
 #
 extends: existence
-message: "There should be one space between sentences."
+message: "Use one space between sentences."
 level: error
 nonword: true
 tokens:
