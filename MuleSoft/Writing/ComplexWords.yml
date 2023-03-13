@@ -1,0 +1,75 @@
+# # Copyright (c) 2023, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
+#
+# Proposes substitutions for complex words
+#
+extends: substitution
+message: "Consider using '%s' instead of '%s'."
+ignorecase: true
+level: suggestion
+action:
+  name: replace
+swap:
+  "approximate(?:ly)?": about
+  abundance: plenty
+  accentuate: stress
+  accompany: go with
+  accomplish: carry out|do
+  accorded: given
+  accordingly: so
+  accrue: add
+  accurate: right|exact
+  acquiesce: agree
+  acquire: get|buy
+  admissible: allowed
+  advantageous: helpful
+  advise: tell
+  aggregate: total
+  aircraft: plane
+  alleviate: ease
+  ameliorate: improve
+  amend: change
+  anticipate: expect
+  apparent: clear|plain
+  ascertain: discover|find out
+  assistance: help
+  attain: meet
+  authorize: allow
+  belated: late
+  bestow: give
+  cease: stop|end
+  commence: begin
+  compensate: pay
+  comprise: form|include
+  confer: give|award
+  constitutes: forms
+  depart: leave
+  designate: choose
+  detrimental: bad|harmful
+  discontinue: stop
+  disseminate: send|give
+  elucidate: explain
+  employ: use
+  encounter: meet
+  endeavor: try
+  equitable: fair
+  exclusively: only
+  expedite: hurry
+  facilitate: ease
+  finalize: complete|finish
+  in order to: to
+  jeopardize: risk
+  liaise: work with|partner with
+  methodology: method
+  necessitate: cause
+  possess: own
+  previous: earlier
+  previously: before
+  solicit: request
+  subsequent: later|next
+  substantial: large
+  transmit: send
+  utilization: use
+  utilize: use
