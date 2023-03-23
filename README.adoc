@@ -7,23 +7,9 @@ The primary purpose of this repository is to enforce the writing style of the ht
 
 ## Getting Started
 
-### Onboarding GitHub PR automatic check 
-
-NOTE: ❗ Mulesoft Writing Style requires Vale >= **1.7.0**. ❗
-
-There are a few files in the link:onboarding-files[onboarding-files] directory that are used to configure the style guide. They need to be copied over to your docs repo.
-
-Simply run `cp -R onboarding-files/. <path>` where <path> is the path to your docs repo, for example `cp -R onboarding-files/. ../docs-anypoint-datagraph`. Then push the files and commit to your repo. You are done!
-
 ### Onboarding local vale runs (for Salesforce employees only)
 
-. Follow https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=Set+Up+Your+Build+Environment#SetUpYourBuildEnvironment-DownloadOnboardingScript[The Download Onboarding Script section] to download the latest internal onboarding script.
-. Run `make vale` to install and set up the vale configuration on your computer. This command will:
-    * use homebrew to install Visual Studio Code, asciidoctor, and vale binaries
-    * add a few files to *~/.vale*
-    * add a few aliases onto your *~/.zshrc* file
-. You can now run `vale --config ~/.vale/.vale.ini <directory or file name>` to style-check the directory or file!
-. If you need to pull the latest rulesets from this repo, simply run `vale-refresh` (or `vale-refresh-test` for beta releases) in the terminal in any directory.
+See https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=Set+Up+Your+Build+Environment#SetUpYourBuildEnvironment-DownloadOnboardingScript[The Download Onboarding Script section] 
 
 == Resources
 
