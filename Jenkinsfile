@@ -8,7 +8,10 @@ pipeline {
   stages {
     stage('Release') {
       when {
-        branch defaultBranch
+        allOf {
+          branch defaultBranch
+          changeset "MuleSoft/**"
+        }
       }
       steps {
         withCredentials([

@@ -29,7 +29,6 @@ class GitHub {
         per_page: 5,
         page: 1,
     })
-    console.log(releases[0].tag_name)
     return releases[0].tag_name
   }
 
