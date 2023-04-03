@@ -7,12 +7,12 @@ pipeline {
   agent any
   stages {
     stage('Release') {
-      when {
-        allOf {
-          branch defaultBranch
-          changeset "MuleSoft/**"
-        }
-      }
+      // when {
+      //   allOf {
+      //     branch defaultBranch
+      //     changeset "MuleSoft/**"
+      //   }
+      // }
       steps {
         withCredentials([
           string(credentialsId: githubCredentialsId, variable: 'GH_TOKEN')]) {
