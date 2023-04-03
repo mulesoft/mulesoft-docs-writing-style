@@ -22,7 +22,7 @@ class GitHub {
     archive.finalize()
   }
 
-  async getCurrentReleaseVersion () {
+  async getLatestReleaseVersion () {
     const { data: releases } = await this.octokit.rest.repos.listReleases({
         owner: this.owner,
         repo: this.repo,
@@ -54,10 +54,15 @@ class GitHub {
     return branchName
   }
 
+  async setTagName () {
+    const latestVersion = await this.getLatestReleaseVersion()
+    return `v${semver.inc(latestVersion, 'major')}`
+  }
+
   async setUp () {
     this.branchName = await this.setBranchName()
     this.ref = `heads/${this.branchName}`
-    this.tagName = semver.inc(await this.getCurrentReleaseVersion(), 'major')
+    this.tagName = await this.setTagName()
 
     console.log(`
     Set up completed with the following variables:
