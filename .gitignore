@@ -1,1 +1,7 @@
+/build/
+/node_modules/
+/public/
 .DS_Store
+.orig
+.idea
+MuleSoft.zip
