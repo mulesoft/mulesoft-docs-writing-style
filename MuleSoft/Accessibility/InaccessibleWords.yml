@@ -23,3 +23,6 @@ tokens:
   - lower
   - beside
   - corner
+  exceptions:
+  - top-level  
+  - top level
