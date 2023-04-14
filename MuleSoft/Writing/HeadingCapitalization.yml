@@ -11,11 +11,8 @@ nonword: true
 level: warning
 scope: heading
 match: $title
+style: Chicago
 exceptions:
-  - for
-  - the
-  - in
-  - on
-  - with
-  - a
-  - an
+  - API
+  - URL
+  - URI

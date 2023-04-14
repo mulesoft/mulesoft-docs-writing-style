@@ -12,7 +12,6 @@ level: suggestion
 action:
   name: replace
 swap:
-  "approximate(?:ly)?": about
   abundance: plenty
   accentuate: stress
   accompany: go with
@@ -36,7 +35,6 @@ swap:
   ascertain: discover|find out
   assistance: help
   attain: meet
-  authorize: allow
   belated: late
   bestow: give
   cease: stop|end
@@ -57,7 +55,6 @@ swap:
   equitable: fair
   exclusively: only
   expedite: hurry
-  facilitate: ease
   finalize: complete|finish
   in order to: to
   jeopardize: risk
@@ -65,11 +62,9 @@ swap:
   methodology: method
   necessitate: cause
   possess: own
-  previous: earlier
   previously: before
   solicit: request
   subsequent: later|next
   substantial: large
-  transmit: send
   utilization: use
   utilize: use
