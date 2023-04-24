@@ -12,5 +12,12 @@ nonword: false
 action:
   name: replace
 swap:
+
   'AnyPoint': Anypoint
+  'Anypoint platform': Anypoint Platform
+  'Cloudhub': CloudHub
+  'Dataweave': DataWeave
+  'GovCloud|Gov Cloud': Government Cloud
   'Mulesoft': MuleSoft
+  'RTF': Runtime Fabric
+  'Datagraph': DataGraph

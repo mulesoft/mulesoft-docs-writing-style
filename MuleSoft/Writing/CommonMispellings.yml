@@ -12,6 +12,6 @@ nonword: false
 action:
   name: replace
 swap:
-  'the': the the
-  'third-party': 3rd-party
+  'the the': the
+  '3rd-party': third-party
   
