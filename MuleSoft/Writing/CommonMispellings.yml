@@ -12,12 +12,6 @@ nonword: false
 action:
   name: replace
 swap:
-
-  'AnyPoint': Anypoint
-  'Anypoint platform': Anypoint Platform
-  'Cloudhub': CloudHub
-  'Datagraph': DataGraph
-  'Dataweave': DataWeave
-  'GovCloud|Gov Cloud': Government Cloud
-  'Mulesoft': MuleSoft
-  'RTF': Runtime Fabric
+  'the the': the
+  '3rd-party': third-party
+  
