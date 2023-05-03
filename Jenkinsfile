@@ -6,6 +6,17 @@ def githubCredentialsId = 'GH_TOKEN'
 pipeline {
   agent any
   stages {
+    stage('Test') {
+      when {
+        allOf {
+          not { branch defaultBranch }
+          changeset "MuleSoft/**"
+        }
+      }
+      steps {
+        sh "docker build -f Dockerfile.test ."
+      }
+    }
     stage('Release') {
       when {
         allOf {

@@ -1,0 +1,6 @@
+FROM jdkato/vale:v2.25.2
+
+WORKDIR /usr/src/app
+COPY MuleSoft .
+COPY .vale.ini .
+RUN vale
