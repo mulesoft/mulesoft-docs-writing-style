@@ -7,7 +7,6 @@
 #
 extends: capitalization
 message: "Use title-style capitalization in headings"
-nonword: true
 level: warning
 scope: heading
 match: $title
