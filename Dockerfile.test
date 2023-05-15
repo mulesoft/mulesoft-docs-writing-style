@@ -1,4 +1,4 @@
-FROM jdkato/vale:v2.25.2
+FROM jdkato/vale:v2.26.0
 
 WORKDIR /usr/src/app
 COPY MuleSoft .
