@@ -13,4 +13,4 @@ level: error
 scope: sentence
 ignorecase: false
 max: 1
-token: '(?:Anypoint) \b((Studio)|(Test))\b'
+token: '(?:Anypoint) (Studio|Test)\b'
