@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/mulesoft/mulesoft-docs-writing-style#readme",
   "devDependencies": {
-    "@octokit/rest": "19.0.8",
+    "@octokit/rest": "19.0.9",
     "archiver": "5.3.1",
     "semver": "7.5.1"
   }
