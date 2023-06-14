@@ -8,16 +8,28 @@
 extends: substitution
 message: "Use '%s' instead of '%s'."
 level: error
-nonword: false
+ignorecase: false
 action:
   name: replace
 swap:
-
+  'ACM': API Community Manager
+  'APM': Partner Manager
+  'ARM': Runtime Manager
+  'DW': DataWeave
+  'MQ': Anypoint MQ
+  'RPA Manger': RPA Manager
+  'RTM': Runtime Manager
+  'RTF': Runtime Fabric
   'AnyPoint': Anypoint
   'Anypoint platform': Anypoint Platform
   'Cloudhub': CloudHub
+  'Cloud Hub': CloudHub
   'Datagraph': DataGraph
+  'Data Graph': DataGraph
+  'Data graph': DataGraph
   'Dataweave': DataWeave
-  'GovCloud|Gov Cloud': Government Cloud
+  'GovCloud': MuleSoft Government Cloud
+  'Gov Cloud': MuleSoft Government Cloud
   'Mulesoft': MuleSoft
-  'RTF': Runtime Fabric
+  'Munit': MUnit
+  'Object Store V2': Object Store v2

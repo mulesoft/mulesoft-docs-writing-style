@@ -11,18 +11,16 @@ link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Access
 level: warning
 ignorecase: true
 tokens:
+  - 'corner(?![ -]case?)'
   - round
   - square
-  - right
+  - 'right(?![ -]click)'
   - left
   - above
   - below
   - bottom
-  - top
   - upper
   - lower
   - beside
-  - corner
-exceptions:
-  - top-level  
-  - top level
+  - 'top(?![ -]level)'
+  

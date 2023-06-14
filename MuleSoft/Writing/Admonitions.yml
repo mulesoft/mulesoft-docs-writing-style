@@ -11,12 +11,8 @@ link: https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writin
 ignorecase: true
 level: suggestion
 tokens:
-  - :note
-  - :warning
-  - :tip
-  - :important
   - note
+  - caution
   - warning
   - tip
   - important
-  - "note that"
