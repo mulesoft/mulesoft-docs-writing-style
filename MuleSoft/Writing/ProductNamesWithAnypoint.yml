@@ -1,0 +1,26 @@
+# # Copyright (c) 2023, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
+#
+# Catches product names not preceded by Anpoint or MuleSoft that must have Anypoint or MuleSoft in the name.
+# Does not perform this check on headings or table headers. Does not work in lists (a bug).
+#
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: error
+ignorecase: false
+scope: 
+  - summary
+  - list
+  - ~heading
+  - ~table.header
+action:
+  name: replace
+swap:
+  '(?<!Anypoint)\s+MQ': 'Anypoint MQ'
+  '(?<!Anypoint)\s+Monitoring': 'Anypoint Monitoring'
+  '(?<!Anypoint)\s+Security': 'Anypoint Security'
+  '(?<!Anypoint)\s+Service Mesh': 'Anypoint Service Mesh'
+  '(?<!Anypoint)\s+Visualizer': 'Anypoint Visualizer'
+  '(?<!MuleSoft)\s+Government Cloud': 'MuleSoft Government Cloud'
