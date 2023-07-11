@@ -18,9 +18,15 @@ scope:
 action:
   name: replace
 swap:
+  '(?<!Anypoint)\s+Analytics': 'Anypoint Analytics'
+  '(?<!Anypoint)\s+API Governance': 'Anypoint API Governance'
   '(?<!Anypoint)\s+MQ': 'Anypoint MQ'
   '(?<!Anypoint)\s+Monitoring': 'Anypoint Monitoring'
+  '(?<!Anypoint)\s+Platform PCE': 'Anypoint Platform PCE'
+  '(?<!Anypoint)\s+Platform Private Cloud Edition': 'Anypoint Private Cloud Edition'
   '(?<!Anypoint)\s+Security': 'Anypoint Security'
   '(?<!Anypoint)\s+Service Mesh': 'Anypoint Service Mesh'
+  '(?<!Anypoint)\s+Virtual Private Cloud': 'Anypoint Virtual Private Cloud'
   '(?<!Anypoint)\s+Visualizer': 'Anypoint Visualizer'
+  '(?<!Anypoint)\s+VPC': 'Anypoint VPC'
   '(?<!MuleSoft)\s+Government Cloud': 'MuleSoft Government Cloud'
