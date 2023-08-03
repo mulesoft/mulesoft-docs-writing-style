@@ -92,7 +92,8 @@ class GitHub {
         tag_name: this.tagName,
         target_commitish: commit,
         name: this.tagName,
-        body: `ref: ${await this.getLastPRLink()}`,
+        body: `A new release of Vale rules is here! Please see https://confluence.internal.salesforce.com/display/MTDT/Vale+Automatic+Style+Checker#ValeAutomaticStyleChecker-UsingVale for instructions on how to update your rules on your computer.
+        Open ${await this.getLastPRLink()} to see what has changed with this release.`,
       })
       .then((result) => result.data)
 
