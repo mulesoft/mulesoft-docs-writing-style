@@ -2,6 +2,8 @@
 
 def defaultBranch = 'master'
 def githubCredentialsId = 'GH_TOKEN'
+
+// update this to the latest version showing in https://github.com/errata-ai/vale/releases
 def valeVersion = '2.28.1'
 
 pipeline {
@@ -17,7 +19,7 @@ pipeline {
       steps {
         sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
         sh "tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C ./"
-        sh './vale'
+        sh './vale .'
       }
     }
     stage('Release') {
