@@ -1,7 +1,10 @@
 #!/bin/env groovy
 
 def defaultBranch = 'master'
+def everythingInsideMulesoftDir = 'MuleSoft/**'
 def githubCredentialsId = 'GH_TOKEN'
+
+def nodeVersion = '18'
 
 // update this to the latest version showing in https://github.com/errata-ai/vale/releases
 def valeVersion = '2.28.1'
@@ -11,7 +14,8 @@ pipeline {
   stages {
     stage('Set Up') {
       steps {
-        installAsciidoctor()
+        installNode(nodeVersion)
+        installNodeDependencies()
         installVale(valeVersion)
       }
     }
@@ -19,7 +23,7 @@ pipeline {
       when {
         allOf {
           not { branch defaultBranch }
-          changeset 'MuleSoft/**'
+          changeset everythingInsideMulesoftDir
         }
       }
       steps {
@@ -30,7 +34,7 @@ pipeline {
       when {
         allOf {
           branch defaultBranch
-          changeset 'MuleSoft/**'
+          changeset everythingInsideMulesoftDir
         }
       }
       steps {
@@ -43,8 +47,16 @@ pipeline {
   }
 }
 
-void installAsciidoctor() {
-  sh 'sudo apt-get -y install asciidoctor'
+void installNode(String nodeVersion) {
+  withCredentials([string(credentialsId: 'NPM_TOKEN', variable: 'NPM_TOKEN')]) {
+    sh "curl -fsSL https://deb.nodesource.com/setup_${nodeVersion}.x | sudo -E bash - && sudo apt-get install -y nodejs"
+    sh 'npm config set @mulesoft:registry=https://nexus3.build.msap.io/repository/npm-internal/{'
+    sh "npm config set //nexus3.build.msap.io/repository/npm-internal/:_authToken=${NPM_TOKEN}"
+  }
+}
+
+void installNodeDependencies() {
+  sh 'npm ci --cache=.cache/npm --no-audit'
 }
 
 void installVale(String valeVersion) {
