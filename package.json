@@ -18,6 +18,7 @@
   "devDependencies": {
     "@octokit/rest": "20.0.1",
     "archiver": "5.3.1",
+    "asciidoctor": "^3.0.2",
     "semver": "7.5.4"
   }
 }
