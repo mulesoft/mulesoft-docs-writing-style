@@ -18,7 +18,7 @@ pipeline {
         sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
         sh "mkdir bin && tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C bin"
         sh 'export PATH=./bin:"$PATH"'
-        sh 'ls /.bin'
+        sh 'ls ./bin'
         sh 'vale'
       }
     }
