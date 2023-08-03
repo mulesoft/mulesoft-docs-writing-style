@@ -9,17 +9,20 @@ def valeVersion = '2.28.1'
 pipeline {
   agent any
   stages {
-    stage('Test') {
-      // when {
-      //   allOf {
-      //     not { branch defaultBranch }
-      //     changeset 'MuleSoft/**'
-      //   }
-      // }
+    stage('Set Up') {
       steps {
-        sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
-        sh "tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C ./"
-        sh "sudo apt-get -y install asciidoctor"
+        installAsciidoctor()
+        installVale(valeVersion)
+      }
+    }
+    stage('Test') {
+      when {
+        allOf {
+          not { branch defaultBranch }
+          changeset 'MuleSoft/**'
+        }
+      }
+      steps {
         sh './vale .'
       }
     }
@@ -38,4 +41,13 @@ pipeline {
       }
     }
   }
+}
+
+void installAsciidoctor() {
+  sh 'sudo apt-get -y install asciidoctor'
+}
+
+void installVale(String valeVersion) {
+  sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
+  sh "tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C ./"
 }
