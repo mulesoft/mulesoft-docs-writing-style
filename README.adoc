@@ -1,17 +1,17 @@
-= Mulesoft Developer Documentations Writing Style
+= MuleSoft Developer Documentations Writing Style
 
-This repository contains a https://github.com/errata-ai/vale[Vale-compatible] implementation of the Mulesoft Writing Style Guide, which is loosely based on the https://docs.microsoft.com/en-us/style-guide/welcome/[Microsoft Writing Style Guide^]. 
+This repository contains a https://github.com/errata-ai/vale[Vale-compatible] implementation of the MuleSoft Writing Style Guide, which is loosely based on the https://docs.microsoft.com/en-us/style-guide/welcome/[Microsoft Writing Style Guide^]. 
 link:LICENSE[LICENSE]
 
-The primary purpose of this repository is to enforce the writing style of the https://docs.mulesoft.com[Mulesoft Technical Documentation^]. It contains the style rules in the form of a series of yaml files, which are used by Vale to automatically lint the documentation content via Github actions.
+The primary purpose of this repository is to enforce the writing style of the https://docs.mulesoft.com[MuleSoft Technical Documentation^]. It contains the style rules in the form of a series of yaml files, which are used by Vale to automatically lint the documentation content via Github actions.
 
 ## Getting Started
 
-### Onboarding local vale runs (for Salesforce employees only)
+### Onboarding Local Vale Runs (For Salesforce Employees Only)
 
 See https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=Set+Up+Your+Build+Environment#SetUpYourBuildEnvironment-DownloadOnboardingScript[The Download Onboarding Script section] 
 
 == Resources
 
-* https://docs.mulesoft.com/en/dev-docs/writing-style-guide/[Mulesoft Writing Style Guide]
+* https://docs.mulesoft.com/en/dev-docs/writing-style-guide/[MuleSoft Writing Style Guide]
 * https://github.com/errata-ai/vale-action[Vale-action]
