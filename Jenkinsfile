@@ -7,21 +7,24 @@ pipeline {
   agent any
   stages {
     stage('Test') {
-      when {
-        allOf {
-          not { branch defaultBranch }
-          changeset "MuleSoft/**"
-        }
-      }
+      // when {
+      //   allOf {
+      //     not { branch defaultBranch }
+      //     changeset 'MuleSoft/**'
+      //   }
+      // }
       steps {
-        sh "docker build -f Dockerfile.test ."
+        sh 'wget https://github.com/errata-ai/vale/releases/download/v2.28.0/vale_2.28.0_Linux_64-bit.tar.gz'
+        sh 'mkdir bin && tar -xvzf vale_2.28.0_Linux_64-bit.tar.gz -C bin'
+        sh 'export PATH=./bin:"$PATH"'
+        sh 'vale'
       }
     }
     stage('Release') {
       when {
         allOf {
           branch defaultBranch
-          changeset "MuleSoft/**"
+          changeset 'MuleSoft/**'
         }
       }
       steps {
