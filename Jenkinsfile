@@ -40,7 +40,8 @@ pipeline {
       steps {
         withCredentials([
           string(credentialsId: githubCredentialsId, variable: 'GH_TOKEN')]) {
-            sh "docker build --build-arg GH_TOKEN=${GH_TOKEN} --build-arg GIT_BRANCH=${env.GIT_BRANCH} -f Dockerfile ."
+            sh 'export GIT_BRANCH=env.GIT_BRANCH'
+            sh 'npm run release'
           }
       }
     }
@@ -60,6 +61,7 @@ void installNodeDependencies() {
 }
 
 void installVale(String valeVersion) {
+  // see https://vale.sh/docs/vale-cli/installation/#github-releases
   sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
   sh "tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C ./"
 }
