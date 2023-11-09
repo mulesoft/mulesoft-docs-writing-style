@@ -6,7 +6,7 @@
 # Proposes substitutions for complex words
 #
 extends: substitution
-message: "Consider using '%s' instead of '%s'."
+message: "Use '%s' instead of '%s'."
 ignorecase: true
 level: suggestion
 action:
@@ -55,11 +55,13 @@ swap:
   exclusively: only
   expedite: hurry
   finalize: complete|finish
+  have to: must
   in order to: to
   jeopardize: risk
   liaise: work with|partner with
   methodology: method
   necessitate: cause
+  need to: must
   possess: own
   solicit: request
   substantial: large
