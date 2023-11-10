@@ -4,6 +4,7 @@
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
 #
 # Catches product names not preceded by Anypoint or MuleSoft that must have Anypoint or MuleSoft in the name.
+# Flags these catches as errors.
 # Does not perform this check on headings or table headers. Does not work in lists (a bug).
 #
 extends: substitution
@@ -19,7 +20,7 @@ action:
   name: replace
 swap:
   '(?<!Anypoint)\s+Analytics': 'Anypoint Analytics'
-  '(?<!Anypoint)\s+API Governance': 'Anypoint API Governance'
+  '(?<!Anypoint)\s+Code Builder': 'Anypoint Code Builder'
   '(?<!Anypoint)\s+MQ': 'Anypoint MQ'
   '(?<!Anypoint)\s+Monitoring': 'Anypoint Monitoring'
   '(?<!Anypoint)\s+Platform PCE': 'Anypoint Platform PCE'
