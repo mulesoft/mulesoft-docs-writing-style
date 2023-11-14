@@ -6,7 +6,7 @@
 # Flags occurrences in which there are more than 40 words in a sentence.
 #
 extends: occurrence
-message: "Try to limit sentences to 40 words."
+message: "Try to limit sentences to 32 words."
 scope: sentence
 level: suggestion
 max: 40
