@@ -9,5 +9,5 @@ extends: occurrence
 message: "Try to limit sentences to 32 words."
 scope: sentence
 level: suggestion
-max: 40
+max: 32
 token: \b(\w+)\b
