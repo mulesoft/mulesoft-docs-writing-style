@@ -1,20 +1,17 @@
 The bird flew above the trees.
 The corner-case scenario was unexpected.
 Lower the volume, please.
-This is a filler sentence.
 The upper shelf is too high.
 Right click on the icon.
 They are right!
 The bottom drawer is stuck.
 Stand beside them.
 Roll the round ball.
-This is a filler sentence.
 Consider the corner case in your code.
 The book is in the corner.
 Please right click the file.
 The treasure is buried below.
 Draw a square on the paper.
-This is a filler sentence.
 Turn left at the intersection.
 The top-level meeting is tomorrow.
 They reached the top level in the game.
