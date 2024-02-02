@@ -4,10 +4,10 @@ def defaultBranch = 'master'
 def everythingInsideMulesoftDir = 'MuleSoft/**'
 def githubCredentialsId = 'GH_TOKEN'
 
-def nodeVersion = '18'
+def nodeVersion = '20'
 
 // update this to the latest version showing in https://github.com/errata-ai/vale/releases
-def valeVersion = '2.28.1'
+def valeVersion = '3.0.7'
 
 pipeline {
   agent any
@@ -27,7 +27,7 @@ pipeline {
         }
       }
       steps {
-        sh './vale .'
+        sh 'make test'
       }
     }
     stage('Release') {
