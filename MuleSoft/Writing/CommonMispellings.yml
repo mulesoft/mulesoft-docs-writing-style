@@ -1,4 +1,4 @@
-# # Copyright (c) 2023, salesforce.com, inc.
+# # Copyright (c) 2024, salesforce.com, inc.
 # All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
@@ -8,6 +8,7 @@
 extends: substitution
 message: "Use '%s' instead of '%s'."
 level: error
+ignorecase: true
 action:
   name: replace
 swap:
@@ -16,5 +17,5 @@ swap:
   'that that': that
   'the the': the
   'to to': to
-  ' a a ': a
-  ' an an': an
+  'a a ': a
+  'an an': an

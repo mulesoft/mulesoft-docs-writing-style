@@ -1,4 +1,4 @@
-# Copyright (c) 2023, salesforce.com, inc.
+# Copyright (c) 2024, salesforce.com, inc.
 # All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
@@ -11,10 +11,8 @@ link: https://confluence.internal.salesforce.com/display/MTDT/Writing+for+Access
 level: warning
 ignorecase: true
 tokens:
-  - 'corner(?![ -]case?)'
   - round
   - square
-  - 'right(?![ -]click)'
   - left
   - above
   - below
@@ -22,5 +20,7 @@ tokens:
   - upper
   - lower
   - beside
+  - 'corner(?![ -]case?)'
+  - 'right(?![ -]click)'
   - 'top(?![ -]level)'
   
