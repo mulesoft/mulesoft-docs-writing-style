@@ -11,7 +11,7 @@ link: 'https://developers.google.com/style/pronouns#personal-pronouns'
 ignorecase: true
 level: warning 
 tokens: 
- - \bI\b
+ - \bI(?!\.)\b
  - \bI'm\b
  - \bme\b
  - \bmy\b
