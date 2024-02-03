@@ -8,6 +8,7 @@
 extends: substitution
 message: "Use '%s' instead of '%s'."
 level: warning
+ignorecase: true
 nonword: false
 action:
   name: replace
@@ -30,7 +31,7 @@ swap:
   'synchronize': sync
   'whether or not': whether
   'wish': want
-  'etc.': and so on
-  '\b(?:eg|e\.g\.)[\s,]': for example
-  '\b(?:ie|i\.e\.)[\s,]': that is
+  'etc.,?': and so on
+  '\b(?:eg|eg\.|e\.g\.),?\b': for example
+  '\b(?:ie|ie\.|i\.e\.),?\b': that is
   'ergo': therefore
