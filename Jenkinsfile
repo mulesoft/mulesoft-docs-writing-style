@@ -16,7 +16,7 @@ pipeline {
       steps {
         installNode(nodeVersion)
         installNodeDependencies()
-        installAsciidoctor()
+        installAptDependencies()
         installVale(valeVersion)
       }
     }
@@ -48,8 +48,8 @@ pipeline {
   }
 }
 
-void installAsciidoctor() {
-  sh 'sudo apt-get install -y asciidoctor yq'
+void installAptDependencies() {
+  sh 'sudo add-apt-repository ppa:rmescandon/yq && sudo apt-get install -y asciidoctor yq'
 }
 
 void installNode(String nodeVersion) {
