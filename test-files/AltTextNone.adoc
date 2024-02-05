@@ -1,2 +1,4 @@
-image::test.jpg[] is not good
-image::test.jpg["alt texts!"] is good
+image::test.jpg[] is not good.
+image::test.jpg["alt texts!"] is good.
+This is not good: image::test-1.jpg[].
+This is good: image::test-1.jpg["alt texts!"]
