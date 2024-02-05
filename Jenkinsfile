@@ -63,5 +63,5 @@ void installNodeDependencies() {
 void installVale(String valeVersion) {
   // see https://vale.sh/docs/vale-cli/installation/#github-releases
   sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
-  sh "tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C /usr/local/bin"
+  sh "sudo tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C /usr/local/bin"
 }
