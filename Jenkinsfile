@@ -23,7 +23,7 @@ pipeline {
       when {
         allOf {
           not { branch defaultBranch }
-          changeset everythingInsideMulesoftDir
+          // changeset everythingInsideMulesoftDir
         }
       }
       steps {
