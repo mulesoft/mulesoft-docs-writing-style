@@ -2,3 +2,7 @@ image::test.jpg[] is not good.
 image::test.jpg["alt texts!"] is good.
 This is not good: image::test-1.jpg[].
 This is good: image::test-1.jpg["alt texts!"]
+image::sunset.jpg[] is bad because it does not have an alt text inside the square brackets.
+image::sunset.jpg[Sunset,200,100] is good because it does have an alt text inside the square brackets.
+image::sunset.jpg[Sunset] is good.
+image::sunset.jpg["Mesa Verde Sunset, by JAVH"] is also good.
