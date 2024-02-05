@@ -11,10 +11,3 @@ ignorecase: true
 level: suggestion
 raw:
   - \b(am|are|were|being|is|been|was|be)\b\s*
-
-extends: existence
-message: "'%s' is future tense. Try to use the present tense."
-ignorecase: true
-level: suggestion
-raw:
- - \b(will)\b\s*
