@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 function is_debug() {
     [ "$1" == "-d" ]
