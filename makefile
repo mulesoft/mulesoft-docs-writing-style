@@ -1,3 +1,4 @@
+.PHONY: test
 test:
 	test-files/tests.sh
 
