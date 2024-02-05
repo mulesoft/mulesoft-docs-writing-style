@@ -16,6 +16,7 @@ pipeline {
       steps {
         installNode(nodeVersion)
         installNodeDependencies()
+        installAsciidoctor()
         installVale(valeVersion)
       }
     }
@@ -49,10 +50,12 @@ pipeline {
   }
 }
 
+void installAsciidoctor() {
+  sh 'sudo apt-get install -y asciidoctor'
+}
+
 void installNode(String nodeVersion) {
-  withCredentials([string(credentialsId: 'NPM_TOKEN', variable: 'NPM_TOKEN')]) {
-    sh "curl -fsSL https://deb.nodesource.com/setup_${nodeVersion}.x | sudo -E bash - && sudo apt-get install -y nodejs"
-  }
+  sh "curl -fsSL https://deb.nodesource.com/setup_${nodeVersion}.x | sudo -E bash - && sudo apt-get install -y nodejs"
 }
 
 void installNodeDependencies() {
