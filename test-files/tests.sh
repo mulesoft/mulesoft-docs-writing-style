@@ -1,9 +1,8 @@
 #!/bin/sh
 
-function is_debug() {
+function is_debug {
     [ "$1" == "-d" ]
 }
-
 
 MODE=$1
 if is_debug "$MODE"; then
