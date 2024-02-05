@@ -1,5 +1,6 @@
+## if testing a specific component, comment out all except for that component. Uncomment when done
+
 Admonitions: 5
-AltTextFaulty: 2
 AltTextNone: 3
 CommonMispellings: 7
 ComplexWords: 50
