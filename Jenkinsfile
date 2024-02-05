@@ -27,6 +27,7 @@ pipeline {
         }
       }
       steps {
+        sh './vale .'
         sh 'make test'
       }
     }
