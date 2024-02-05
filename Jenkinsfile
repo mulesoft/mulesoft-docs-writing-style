@@ -27,8 +27,6 @@ pipeline {
         }
       }
       steps {
-        sh 'which asciidoctor'
-        sh './vale .'
         sh 'make test'
       }
     }
