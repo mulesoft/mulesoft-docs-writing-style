@@ -19,7 +19,7 @@ Another way to test is to copy and compile your rule in https://studio.vale.sh/[
 
 ### How to Test New Rules
 
-If you have created a new rule, please add an adoc file with the same name in *test-files/*, add test cases. Then add an entry for it in link:test-files/violation-count-map.yaml[violation-count-map.yaml].
+If you have created a new rule, please add an adoc file full of test phrases with the same name in *test-files/*. Then add an entry for it in link:test-files/violation-count-map.yaml[violation-count-map.yaml].
 
 == Resources
 
