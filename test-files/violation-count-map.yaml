@@ -1,0 +1,20 @@
+# when you have created a new rule, add an entry here along with the expected number of violations.
+# if testing a specific component, comment out all except for that component. Uncomment when done
+
+Admonitions: 5
+AltTextNone: 3
+CommonMispellings: 7
+ComplexWords: 50
+FirstPerson: 5
+Future: 3
+HeadingCapitalization: 3
+HeadingPunctuation: 4
+GenderBias: 8
+InaccessibleWords: 11
+ModalVerbs: 5
+Passive: 8
+ProductNames: 19
+Quotes: 2
+SentenceLength: 2
+Spacing: 3
+StyleWords: 24

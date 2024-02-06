@@ -1,4 +1,4 @@
-# # Copyright (c) 2023, salesforce.com, inc.
+# # Copyright (c) 2024, salesforce.com, inc.
 # All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
@@ -8,6 +8,7 @@
 extends: substitution
 message: "Use '%s' instead of '%s'."
 level: warning
+ignorecase: true
 nonword: false
 action:
   name: replace
@@ -30,7 +31,7 @@ swap:
   'synchronize': sync
   'whether or not': whether
   'wish': want
-  'etc.': and so on
-  '\b(?:eg|e\.g\.)[\s,]': for example
-  '\b(?:ie|i\.e\.)[\s,]': that is
+  '\betc\.?': and so on
+  '\b(?:eg|eg\.|e\.g\.),?': for example
+  '\b(?:ie|ie\.|i\.e\.),?': that is
   'ergo': therefore
