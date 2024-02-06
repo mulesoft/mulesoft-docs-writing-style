@@ -1,4 +1,5 @@
-## if testing a specific component, comment out all except for that component. Uncomment when done
+# when you have created a new rule, add an entry here along with the expected number of violations.
+# if testing a specific component, comment out all except for that component. Uncomment when done
 
 Admonitions: 5
 AltTextNone: 3
@@ -16,4 +17,4 @@ ProductNames: 19
 Quotes: 2
 SentenceLength: 2
 Spacing: 3
-StyleWords: 26
+StyleWords: 24

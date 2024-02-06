@@ -4,13 +4,12 @@ They walked backwards without tripping.
 We need information on the project.
 The data are exact.
 Just drag and drop the files here.
-They are tired, i.e., they need rest.
 The server is on premise.
 We wish for happiness.
-The option was grayed out.
+The option is grayed out.
 You can choose tea and/or coffee.
 Synchronize your devices for better efficiency.
-There are many fruits, etc., in the basket.
+There are many fruits, etc.
 They love animals, eg, dogs, cats.
 They studied hard, ergo, they passed.
 This is different to what you expected.
@@ -23,4 +22,3 @@ Sign into your email.
 Type the command in the command line.
 Whether or not you come, the event is happening.
 Tick the check box to agree.
-Bring stationery, e.g., pens, pencils.

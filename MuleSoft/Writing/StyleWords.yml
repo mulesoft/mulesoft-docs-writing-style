@@ -31,7 +31,7 @@ swap:
   'synchronize': sync
   'whether or not': whether
   'wish': want
-  'etc.,?': and so on
-  '\b(?:eg|eg\.|e\.g\.),?\b': for example
-  '\b(?:ie|ie\.|i\.e\.),?\b': that is
+  '\betc\.?': and so on
+  '\b(?:eg|eg\.|e\.g\.),?': for example
+  '\b(?:ie|ie\.|i\.e\.),?': that is
   'ergo': therefore

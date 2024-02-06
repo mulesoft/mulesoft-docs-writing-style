@@ -185,3 +185,6 @@ tokens:
   - woven
   - written
   - wrung
+exceptions:
+  - grayed
+  - tired
