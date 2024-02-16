@@ -18,3 +18,8 @@ DW stands for DataWeave in MuleSoft.
 Anypoint platform is a product of MuleSoft.
 Datagraph is useful for visualizing data.
 Object Store V2 is not accessible.
+APIKit is a toolkit that simplifies the development of API-led applications for Mule developers.
+With APIKIT, incoming requests are intelligently routed to the appropriate endpoints based on the defined API contracts.
+APIkit includes sources and operations that perform complex input validations according to the requirements in the API specification.
+Apikit generates the structure of a Mule application based on a supported API specification.
+The apikit for REST module includes an API console that enables you to experiment with the API project as you develop it.
