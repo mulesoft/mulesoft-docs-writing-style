@@ -1,0 +1,4 @@
+image::test.jpg[alt text] is not good because the alt text contains a space, and the alt text does not have double quotes around it.
+image::test-1.jpg["alt texts!"] is good because it does have double quotes around the alt text.
+image::test-2.jpg['alt text'] is not good because it does not have double quotes around the alt text.
+image::test-2.jpg[alt,text] is not good because the alt text contains a comman, and it does not have double quotes around it.

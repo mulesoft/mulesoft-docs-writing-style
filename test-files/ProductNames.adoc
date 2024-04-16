@@ -1,0 +1,25 @@
+Data Graph represents data in a graphical form.
+Munit is a Mule testing framework.
+Cloud Hub provides various cloud services.
+Dataweave is a language for querying and transforming data.
+GovCloud is designed for government agencies.
+RPA Manger oversees the robotic process automation.
+ACM is a useful tool for managing content.
+Data graph makes complex data understandable.
+RTM is a crucial part of project management.
+Gov Cloud ensures regulatory compliance.
+RTF files are commonly used in text editing.
+APM helps in monitoring performance.
+ARM templates are used for Azure resources.
+AnyPoint is a platform for connecting apps.
+Cloudhub is a cloud-based integration platform.
+MuleSoft provides integration software.
+DW stands for DataWeave in MuleSoft.
+Anypoint platform is a product of MuleSoft.
+Datagraph is useful for visualizing data.
+Object Store V2 is not accessible.
+APIKit is a toolkit that simplifies the development of API-led applications for Mule developers.
+With APIKIT, incoming requests are intelligently routed to the appropriate endpoints based on the defined API contracts.
+APIkit includes sources and operations that perform complex input validations according to the requirements in the API specification.
+Apikit generates the structure of a Mule application based on a supported API specification.
+The apikit for REST module includes an API console that enables you to experiment with the API project as you develop it.

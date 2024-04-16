@@ -9,9 +9,21 @@ The primary purpose of this repository is to enforce the writing style of the ht
 
 ### Onboarding Local Vale Runs (For Salesforce Employees Only)
 
-See https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=Set+Up+Your+Build+Environment#SetUpYourBuildEnvironment-DownloadOnboardingScript[The Download Onboarding Script section] 
+See https://confluence.internal.salesforce.com/pages/viewpage.action?spaceKey=MTDT&title=Set+Up+Your+Build+Environment#SetUpYourBuildEnvironment-DownloadOnboardingScript[The Download Onboarding Script section]
+
+## Test
+
+Run `make test` to test the rules against the files in the *test-files/* directory. Run `make test-debug` to see the vale output.
+
+Another way to test is to copy and compile your rule in https://studio.vale.sh/[Vale Studio], and then run it against your test cases.
+
+### How to Test New Rules
+
+If you have created a new rule, please add an adoc file full of test phrases with the same name in *test-files/*. Then add an entry for it in link:test-files/violation-count-map.yaml[violation-count-map.yaml].
 
 == Resources
 
-* https://docs.mulesoft.com/en/dev-docs/writing-style-guide/[MuleSoft Writing Style Guide]
-* https://github.com/errata-ai/vale-action[Vale-action]
+* https://confluence.internal.salesforce.com/display/MTDT/MuleSoft+CX+Writing+Style+Reference[MuleSoft Writing Style Guide (internal resource. VPN required)]
+* https://github.com/errata-ai[errata-ai's repo. Good for referencing rules from other styles]
+* https://vale.sh/[vale documentation]
+* https://studio.vale.sh/[Vale Studio. Good for testing rules in a web browser]

@@ -1,4 +1,4 @@
-# # Copyright (c) 2023, salesforce.com, inc.
+# # Copyright (c) 2024, salesforce.com, inc.
 # All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clausescope: raw
@@ -15,20 +15,18 @@ swap:
   'ACM': API Community Manager
   'APM': Partner Manager
   'ARM': Runtime Manager
-  'DW': DataWeave
-  'RPA Manger': RPA Manager
-  'RTM': Runtime Manager
-  'RTF': Runtime Fabric
   'AnyPoint': Anypoint
   'Anypoint platform': Anypoint Platform
-  'Cloudhub': CloudHub
-  'Cloud Hub': CloudHub
-  'Datagraph': DataGraph
-  'Data Graph': DataGraph
-  'Data graph': DataGraph
+  'APIK[Ii][Tt]': APIkit
+  '[Aa]pi[Kk]it': APIkit
+  'Cloud ?[Hh]ub': CloudHub
+  'Data ?[Gg]raph': DataGraph
   'Dataweave': DataWeave
-  'GovCloud': MuleSoft Government Cloud
-  'Gov Cloud': MuleSoft Government Cloud
+  'DW': DataWeave
+  'Gov ?Cloud': MuleSoft Government Cloud
   'Mulesoft': MuleSoft
   'Munit': MUnit
   'Object Store V2': Object Store v2
+  'RPA Manger': RPA Manager
+  'RTF': Runtime Fabric
+  'RTM': Runtime Manager

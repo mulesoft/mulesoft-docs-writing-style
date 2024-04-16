@@ -4,10 +4,10 @@ def defaultBranch = 'master'
 def everythingInsideMulesoftDir = 'MuleSoft/**'
 def githubCredentialsId = 'GH_TOKEN'
 
-def nodeVersion = '18'
+def nodeVersion = '20'
 
 // update this to the latest version showing in https://github.com/errata-ai/vale/releases
-def valeVersion = '2.28.1'
+def valeVersion = '3.0.7'
 
 pipeline {
   agent any
@@ -16,6 +16,7 @@ pipeline {
       steps {
         installNode(nodeVersion)
         installNodeDependencies()
+        installAptDependencies()
         installVale(valeVersion)
       }
     }
@@ -23,11 +24,10 @@ pipeline {
       when {
         allOf {
           not { branch defaultBranch }
-          changeset everythingInsideMulesoftDir
         }
       }
       steps {
-        sh './vale .'
+        sh 'make test'
       }
     }
     stage('Release') {
@@ -48,12 +48,12 @@ pipeline {
   }
 }
 
+void installAptDependencies() {
+  sh 'sudo add-apt-repository ppa:rmescandon/yq && sudo apt-get install -y asciidoctor yq'
+}
+
 void installNode(String nodeVersion) {
-  withCredentials([string(credentialsId: 'NPM_TOKEN', variable: 'NPM_TOKEN')]) {
-    sh "curl -fsSL https://deb.nodesource.com/setup_${nodeVersion}.x | sudo -E bash - && sudo apt-get install -y nodejs"
-    sh 'npm config set @mulesoft:registry=https://nexus3.build.msap.io/repository/npm-internal/{'
-    sh "npm config set //nexus3.build.msap.io/repository/npm-internal/:_authToken=${NPM_TOKEN}"
-  }
+  sh "curl -fsSL https://deb.nodesource.com/setup_${nodeVersion}.x | sudo -E bash - && sudo apt-get install -y nodejs"
 }
 
 void installNodeDependencies() {
@@ -63,5 +63,5 @@ void installNodeDependencies() {
 void installVale(String valeVersion) {
   // see https://vale.sh/docs/vale-cli/installation/#github-releases
   sh "wget https://github.com/errata-ai/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz"
-  sh "tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C ./"
+  sh "sudo tar -xvzf vale_${valeVersion}_Linux_64-bit.tar.gz -C /usr/local/bin"
 }
