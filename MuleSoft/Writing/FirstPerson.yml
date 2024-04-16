@@ -13,6 +13,7 @@ level: warning
 tokens: 
  - \bI(?!\.)\b
  - \bI'm\b
- - \bme\b
+ - (?<!\.show\s)me
+ # - \bme\b 
  - \bmy\b
  - \bmine\b
