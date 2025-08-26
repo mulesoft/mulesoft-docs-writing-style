@@ -39,12 +39,7 @@ jobs:
           zip -r ./dist/MuleSoft.zip ./MuleSoft/
       
       - name: Create Github Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
-          tag_name: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
-          release_name: Release $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
-          draft: false
-          prerelease: false
-          upload_assets: ./dist/MuleSoft.zip
+          version: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
+          files: ./dist/MuleSoft.zip
