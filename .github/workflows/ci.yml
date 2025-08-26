@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Asciidoctor
-        run: sudo apt-get install -y asciidoctor
+      - name: Install dependencies
+        run: sudo apt-get install -y asciidoctor yamllint
 
       - name: Install Vale
         run: |
@@ -32,6 +32,10 @@ jobs:
         
       - name: Run Vale tests with validation
         run: make test
+
+      - name: Validate YAML files
+        run: |
+          find MuleSoft -name "*.yml" -exec yamllint {} \; || echo "YAML validation completed"
 
   # lint:
   #   runs-on: mulesoft-ubuntu
@@ -51,10 +55,6 @@ jobs:
       
   #   - name: Check package.json format
   #     run: npx prettier --check package.json
-      
-  #   - name: Validate YAML files
-  #     run: |
-  #       find MuleSoft -name "*.yml" -exec yamllint {} \; || echo "YAML validation completed"
         
   # security:
   #   runs-on: mulesoft-ubuntu
