@@ -16,13 +16,22 @@ jobs:
       - name: Install Asciidoctor
         run: sudo apt-get install -y asciidoctor
 
-      - name: Setup Vale
-        uses: errata-ai/vale-action@reviewdog
-        with:
-          files: test-files/
-          version: 3.12.0
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Install Vale
+        run: |
+          wget -O vale.tar.gz https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_Linux_64-bit.tar.gz
+          tar -xzf vale.tar.gz
+          sudo mv vale /usr/local/bin/
+          
+      - name: Install yq (YAML processor)
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+          
+      - name: Make test script executable
+        run: chmod +x test-files/tests.sh
+        
+      - name: Run Vale tests with validation
+        run: make test
 
   # lint:
   #   runs-on: mulesoft-ubuntu
