@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: mulesoft-ubuntu
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Vale
+      run: |
+        wget -O vale.tar.gz https://github.com/errata-ai/vale/releases/latest/download/vale_Linux_64-bit.tar.gz
+        tar -xzf vale.tar.gz
+        sudo mv vale /usr/local/bin/
+        
+    - name: Install yq (YAML processor)
+      run: |
+        sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+        sudo chmod +x /usr/local/bin/yq
+        
+    - name: Make test script executable
+      run: chmod +x test-files/tests.sh
+      
+    - name: Run tests
+      run: make test
+      
+    - name: Validate Vale configuration
+      run: vale --config=.vale.ini --no-exit test-files/
+      
+  # lint:
+  #   runs-on: mulesoft-ubuntu
+    
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v4
+      
+  #   - name: Setup Node.js
+  #     uses: actions/setup-node@v4
+  #     with:
+  #       node-version-file: '.nvmrc'
+  #       cache: 'npm'
+        
+  #   - name: Install dependencies
+  #     run: npm ci
+      
+  #   - name: Check package.json format
+  #     run: npx prettier --check package.json
+      
+  #   - name: Validate YAML files
+  #     run: |
+  #       find MuleSoft -name "*.yml" -exec yamllint {} \; || echo "YAML validation completed"
+        
+  # security:
+  #   runs-on: mulesoft-ubuntu
+    
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v4
+      
+  #   - name: Setup Node.js
+  #     uses: actions/setup-node@v4
+  #     with:
+  #       node-version-file: '.nvmrc'
+  #       cache: 'npm'
+        
+  #   - name: Install dependencies
+  #     run: npm ci
+      
+  #   - name: Run security audit
+  #     run: npm audit --audit-level moderate
+      
+  #   - name: Check for known vulnerabilities
+  #     run: npx audit-ci --moderate
