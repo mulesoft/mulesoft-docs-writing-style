@@ -41,5 +41,6 @@ jobs:
       - name: Create Github Release
         uses: softprops/action-gh-release@v2
         with:
-          version: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
+          name: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
+          tag_name: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
           files: ./dist/MuleSoft.zip
