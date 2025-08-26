@@ -38,9 +38,26 @@ jobs:
           mkdir -p ./dist
           zip -r ./dist/MuleSoft.zip ./MuleSoft/
       
+      - name: Setup Node.js for release
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          
+      - name: Install dependencies for release
+        run: npm ci
+        
+      - name: Get next version
+        id: version
+        run: |
+          LATEST_TAG=$(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name // "v0.0.0"')
+          NEXT_VERSION=$(npx semver -i major $LATEST_TAG)
+          echo "next_version=$NEXT_VERSION" >> $GITHUB_OUTPUT
+          echo "Next version will be: $NEXT_VERSION"
+        
       - name: Create Github Release
         uses: softprops/action-gh-release@v2
         with:
-          name: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
-          tag_name: $(shell semver -i major $(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name'))
+          name: ${{ steps.version.outputs.next_version }}
+          tag_name: ${{ steps.version.outputs.next_version }}
           files: ./dist/MuleSoft.zip
