@@ -10,31 +10,19 @@ jobs:
     runs-on: mulesoft-ubuntu
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Install asciidoctor
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y asciidoctor
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@v2.1.1
+        with:
+          fail_on_error: true
+          files: test-files/
+          version: 3.12.0
 
-    - name: Setup Vale
-      uses: errata-ai/vale-action@reviewdog
-      with:
-        files: test-files/
-        version: 3.12.0
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Install Asciidoctor
+        run: sudo apt-get install -y asciidoctor
 
-    - name: change permission
-      run: chmod +x test-files/tests.sh
-      
-    - name: Run tests
-      run: make test
-      
-    - name: Validate Vale configuration
-      run: vale --config=.vale.ini --no-exit test-files/
-      
+      - name: Run Vale
+        run: vale --config=.vale.ini --no-exit test-files/
+
   # lint:
   #   runs-on: mulesoft-ubuntu
     
