@@ -16,12 +16,7 @@ jobs:
           fail_on_error: true
           files: test-files/
           version: 3.12.0
-
-      - name: Install Asciidoctor
-        run: sudo apt-get install -y asciidoctor
-
-      - name: Run Vale
-        run: vale --config=.vale.ini --no-exit test-files/
+      - run: sudo apt-get install -y asciidoctor
 
   # lint:
   #   runs-on: mulesoft-ubuntu
