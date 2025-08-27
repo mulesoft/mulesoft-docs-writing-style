@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: mulesoft-ubuntu
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Asciidoctor
+        run: sudo apt-get install -y asciidoctor
+
+      - name: Install Vale
+        run: |
+          wget -O vale.tar.gz https://github.com/errata-ai/vale/releases/download/v3.12.0/vale_3.12.0_Linux_64-bit.tar.gz
+          tar -xzf vale.tar.gz
+          sudo mv vale /usr/local/bin/
+          
+      - name: Install yq (YAML processor)
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+          
+      - name: Make test script executable
+        run: chmod +x test-files/tests.sh
+        
+      - name: Run Vale tests with validation
+        run: make test
+      
+      - name: Zip MuleSoft folder
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          mkdir -p ./dist
+          zip -r ./dist/MuleSoft.zip ./MuleSoft/
+      
+      - name: Setup Node.js for release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          
+      - name: Install dependencies for release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: npm ci
+        
+      - name: Get next version
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        id: version
+        run: |
+          LATEST_TAG=$(curl -s https://api.github.com/repos/mulesoft/mulesoft-docs-writing-style/releases/latest | jq -r '.tag_name // "v0.0.0"')
+          NEXT_VERSION=$(npx semver -i major $LATEST_TAG)
+          echo "next_version=$NEXT_VERSION" >> $GITHUB_OUTPUT
+          echo "Next version will be: $NEXT_VERSION"
+        
+      - name: Create Github Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          name: v${{ steps.version.outputs.next_version }}
+          tag_name: v${{ steps.version.outputs.next_version }}
+          files: ./dist/MuleSoft.zip
